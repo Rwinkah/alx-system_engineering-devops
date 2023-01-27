@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Printing Best School, good luck and bad luck
+
+a=0
+while (( a < 10 ));
+do
+if [ "$a" = 3 ]
+then
+echo "bad luck"
+elif [ "$a" = 7 ]
+then
+echo "good luck"
+else
+echo "Best School"
+fi
+((a++))
+done
