@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Display 12 hours of a day
+
+hour=0
+
+while (( hour < 13 ));
+do
+echo "Hour=$hour"
+min=1
+while (( min < 61 ));
+do
+echo "$min"
+((min++))
+done
+((hour++))
+done
