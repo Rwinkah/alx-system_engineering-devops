@@ -7,7 +7,7 @@ while (( hour < 13 ));
 do
 echo "Hour=$hour"
 min=1
-while (( min < 61 ));
+while (( min < 60 ));
 do
 echo "$min"
 ((min++))
