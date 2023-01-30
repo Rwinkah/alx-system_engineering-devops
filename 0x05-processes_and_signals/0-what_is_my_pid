@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+#printing out the process id of this program
 echo $$ 
