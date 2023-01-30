@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# print a string infinitely and trap sigterm
+
+trap "echo I am invincible" SIGTERM
+
+for ((;;));
+do
+echo "To infinity and beyond"
+sleep 2;
+done
+
+
+
