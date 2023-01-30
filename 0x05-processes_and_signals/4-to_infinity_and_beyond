@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#bash script to display a string infinitely
+
+message="To infinity an beyond"
+for ((;;));
+do
+echo "$message"
+sleep 2;
+done
