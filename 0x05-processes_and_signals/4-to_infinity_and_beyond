@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #bash script to display a string infinitely
 
-message="To infinity an beyond"
+message="To infinity and beyond"
 for ((;;));
 do
 echo "$message"
