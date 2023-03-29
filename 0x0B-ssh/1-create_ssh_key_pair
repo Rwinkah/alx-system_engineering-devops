@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Bash script to create an ssh pair using ssh keygen
 
-ssh-keygen -v 4096 -f school -N betty
+ssh-keygen -b 4096 -f school -N betty
