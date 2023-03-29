@@ -1,0 +1,7 @@
+# Configure ssh to work without password authentication
+# Through a configuration file
+
+Host *
+        passwordAuthentication no
+        HostbasedAuthentication no
+        IdentityFile ~/.ssh/school
