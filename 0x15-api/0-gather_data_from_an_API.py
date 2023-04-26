@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-""" Python script using rest API """
+"""Python script using rest API """
+
 
 import sys
 import requests as req
+
 
 def main():
     """ rest API script"""
