@@ -1,26 +1,32 @@
 #!/usr/bin/python3
 """
 Python script using rest API to get a response.
+with the urlib library
 """
-import requests as req
-import sys
+from sys import argv
+import json
+from urllib import request
 
 
 def main():
     """rest API script that returns information about employee progress."""
 
-    list_url = 'https://jsonplaceholder.typicode.com/'
-    todo = req.get(list_url + 'todos', params={'userId': sys.argv[1]}).json()
-    userid = r.get(list_url + 'users/{}'.format(sys.argv[1])).json()
-    doneTask = [title.get("title") for
-                title in todo if title.get('completed') is True]
+    count = 0
+    comp_title = []
+    base_url = 'https://jsonplaceholder.typicode.com/'
+    todo = json.loads(request.urlopen(base_url + 'todos').read().decode())
+    user = json.loads(request.urlopen(base_url + 'users/' + argv[1]).read().decode())
 
-    print("done task")
-    print("Employee {} is done with tasks({}/{}):"
-          .format(userid.get("name"), len(doneTask), len(todo)))
+    for i in todo:
+        if i['userId'] == int(argv[1]) and i['completed']:
+            count += 1
+            comp_title.append(i['title'])
+            
 
-    [print("\t {}".format(title) for title in donetask)]
-
+    print('Employee {} is done with tasks({}/20 tasks)'.format(user['name'], count))
+    for i in comp_title:
+        print('     {}'.format(i))
 
 if __name__ == '__main__':
     main()
+
