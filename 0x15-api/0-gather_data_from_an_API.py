@@ -2,8 +2,8 @@
 """
 Python script using rest API to get a response.
 """
-import sys
 import requests as req
+import sys
 
 
 def main():
