@@ -17,7 +17,7 @@ def main():
 
     print("done task")
     print("Employee {} is done with tasks({}/{}):"
-            .format(userid.get("name"), len(doneTask), len(todo)))
+          .format(userid.get("name"), len(doneTask), len(todo)))
 
     [print("\t {}".format(title) for title in donetask)]
 
