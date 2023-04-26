@@ -6,6 +6,7 @@ import requests as req
 
 def main():
     """rest API script that returns information about employee progress."""
+
     list_url = 'https://jsonplaceholder.typicode.com/'
     todo = req.get(list_url + 'todos', params={'userId': sys.argv[1]}).json()
     userid = r.get(list_url + 'users/{}'.format(sys.argv[1]}).json()
