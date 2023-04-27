@@ -3,6 +3,7 @@
 Python script using rest API to get a response.
 with the urlib library
 """
+import csv
 import json
 from sys import argv
 from urllib import request
@@ -18,11 +19,17 @@ def main():
     user = json.loads(request.urlopen(base_url + 'users/' + argv[1])
                       .read().decode())
 
-    for i in todo:
-        if i['userId'] == int(argv[1]):
-            count += 1
-            print('"{}","{}","{}","{}"'.format(i['userId'], user['username'],
-                  i['completed'], i['title']))
+    with open('{}.csv'.format(argv[1]), 'w', newline='') as f:
+        file_write = csv.writer(f, quoting=csv.QUOTE_ALL)
+        for i in todo:
+            if i['userId'] == int(argv[1]):
+                userid = i['userId']
+                username = user['username']
+                comp = i['completed']
+                title = i['title']
+                file_write.writerow(["{}".format(userid), "{}"
+                                    .format(username), "{}".format(comp), "{}"
+                                    .format(title)])
 
 
 if __name__ == '__main__':
