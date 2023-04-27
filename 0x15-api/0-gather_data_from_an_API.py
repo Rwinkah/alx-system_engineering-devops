@@ -3,8 +3,8 @@
 Python script using rest API to get a response.
 with the urlib library
 """
-from sys import argv
 import json
+from sys import argv
 from urllib import request
 
 
