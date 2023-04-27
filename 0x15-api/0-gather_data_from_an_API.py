@@ -23,10 +23,10 @@ def main():
             count += 1
             comp_title.append(i['title'])
 
-    print('Employee {} is done with tasks({}/20 tasks):'
+    print('Employee {} is done with tasks({}/20):'
           .format(user['name'], count))
     for i in comp_title:
-        print('     {}'.format(i))
+        print('\t {}'.format(i))
 
 
 if __name__ == '__main__':
