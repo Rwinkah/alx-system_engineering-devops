@@ -1,0 +1,1 @@
+Server debugging witj nginx
