@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Installing nginx on a server and setting it up to return hello world as it's default
 
 sudo apt-get update -y
