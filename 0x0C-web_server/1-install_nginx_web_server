@@ -4,6 +4,9 @@
 sudo apt-get update -y
 sudo apt-get install nginx -y
 
-sudo echo 'Hello World!' > /var/www/html/index.html
+sudo apt-get update -y
+sudo apt-get install nginx -y
 
-systemctl restart nginx
+sudo chown -R $USER:$USER /var/www
+sudo echo 'Hello World!' > /var/www/html/index.html
+sudo systemctl restart nginx
