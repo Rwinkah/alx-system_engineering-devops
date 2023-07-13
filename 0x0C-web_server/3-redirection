@@ -10,4 +10,4 @@ sudo ufw allow "Nginx HTTP"
 loc_reloc='location /redirect_me {\n\treturn 301 http://www.google.com\n}'
 sudo sed -i 's/# pass PHP scripts to FastCGI server/'"$loc_reloc"'/g' /etc/nginx/nginx.conf
 
-sudo service restart nginx
+sudo service nginx restart
