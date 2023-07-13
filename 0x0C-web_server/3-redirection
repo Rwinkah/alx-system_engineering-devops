@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Installing nginx on a server and setting it up to redirect when hit with /redirect_me 
 
 sudo apt-get update -y
