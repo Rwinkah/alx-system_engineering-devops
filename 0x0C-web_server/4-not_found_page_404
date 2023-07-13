@@ -12,7 +12,7 @@ echo "Hello World!" | sudo tee /var/www/html/index.html
 loc_reloc='\\tlocation /redirect_me {\n\t\treturn 301 http://www.google.com;\n\t}'
 sudo sed -i "47i $loc_reloc" /etc/nginx/sites-available/default
 
-tocuh /var/www/html/error_404
+touch /var/www/html/error_404
 echo "Ceci n'est pas une page." | sudo tee /var/www/html/error_404
 error_404='\\n\terror_page 404 /error_handler/error_404'
 sudo sed -i "24i $error_404" /etc/nginx/sites-available/default
