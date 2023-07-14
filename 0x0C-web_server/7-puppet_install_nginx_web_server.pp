@@ -1,26 +1,24 @@
-# puppet script to setup server
-package { 'nginx':
-  ensure => 'installed',
+# server config using puppet
+
+package {'nginx':
+  ensure => 'present',
 }
 
-exec { 'repo_update':
-  command => 'sudo apt-get update -y',
+exec {'install':
+  command  => 'sudo apt-get update -y',
   provider => shell,
 }
 
-exec { 'index_page':
-  command => 'echo "Hello World!" | sudo tee /var/www/html/index.html',
+exec {'Hello World!':
+  command  => 'echo "Hello World!" | sudo tee /var/www/html/index.html',
   provider => shell,
 }
 
-exec {'redirect':
-	command => sed -i 'i 47i \\tlocation /redirect_me {\n\t\treturn 301 http://www.google.com;\n\t}',
-	provider => shell,
-}
-
-exec { 'start_server':
-  command => 'sudo service nginx restart',
+exec {'sudo sed -i "s/listen 80 default_server;/listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/www.google.com\/;\\n\\t}/" /etc/nginx/sites-available/default':
   provider => shell,
 }
 
-
+exec {'start_server':
+  command  => 'sudo service nginx restart',
+  provider => shell,
+}
