@@ -19,5 +19,7 @@ exec { 'start_server':
 }
 
 exec {'redirect':
-	command => sed -i 'i 47i \\tlocation /redirect_me {\n\t\treturn 301 http://www.google.com;\n\t}'
+	command => sed -i 'i 47i \\tlocation /redirect_me {\n\t\treturn 301 http://www.google.com;\n\t}',
+	provider => shell,
+}
 
