@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Installing nginx on a server and setting it up to return hello world as it's default
+
+sudo apt-get update -y
+
+sudo apt-get install nginx -y
+sudo ufw allow "Nginx HTTP"
+touch /var/www/html/index.html
+chown $USER:$USER /var/www/html/index.html
+echo 'Hello World!' > /var/www/html/index.html
+loc_reloc='\\tlocation /redirect_me {\n\t\treturn 301 http://www.google.com;\n\t}'
+sudo sed -i "47i $loc_reloc" /etc/nginx/sites-available/default
+sudo sed -i "20i add_header X-Served By $server_name;" /etc/nginx/sites-available/default
+
+sudo systemctl restart nginx
