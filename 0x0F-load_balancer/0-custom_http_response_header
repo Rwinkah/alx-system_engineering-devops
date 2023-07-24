@@ -24,6 +24,6 @@ error_404='\\n\terror_page 404 /error_404;'
 sudo sed -i "24i $error_404" /etc/nginx/sites-available/default
 
 #adding custom header
-sudo sed -i "21i add_header X-Served-By \$hostname" /etc/nginx/sites-available/default
+sudo sed -i "21i add_header X-Served-By \$hostname;" /etc/nginx/sites-available/default
 
 sudo systemctl restart nginx
